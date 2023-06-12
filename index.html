@@ -217,8 +217,15 @@
         method="POST"
         class="form"
       >
-        <input type="text" placeholder="Your Name" name="name" size="50">
-        <input type="email" placeholder="Your Email" name="email" size="50">
+        <!--Honeypot -->
+        <input type="text" name="_honey" style="display: none;">
+        
+        <!--Diable Captcha-->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://shyfricas.github.io/portfolio/"
+        
+        <input type="text" placeholder="Your Name" name="name" size="50" required>
+        <input type="email" placeholder="Your Email" name="email" size="50" required>
         <textarea
           name="comments,questions"
           id=""
