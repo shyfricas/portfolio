@@ -246,6 +246,45 @@ span {
   object-position: center;
 }
 
+/* Certifications: reuse projects styles but allow single-column display when only one cert */
+.certifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.certifications .projects-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+.certifications .project-card {
+  height: 25rem;
+}
+
+.certifications .cert-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: rgba(38, 58, 41, 0.7);
+  text-align: left;
+  z-index: 3;
+}
+.certifications .cert-caption h3 {
+  font-size: 1.8rem;
+  color: #f3deba;
+  margin: 0 0 0.2rem 0;
+}
+.certifications .cert-caption p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
 .card-overlay {
   background: rgba(38, 58, 41, 0.8);
   position: absolute;
