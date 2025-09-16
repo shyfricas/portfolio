@@ -230,6 +230,8 @@ span {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
 }
 .project-card {
   position: relative;
@@ -237,6 +239,7 @@ span {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .project-card img {
@@ -244,6 +247,7 @@ span {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 /* Certifications: reuse projects styles but allow single-column display when only one cert */
