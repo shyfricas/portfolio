@@ -35,10 +35,10 @@ ScrollReveal().reveal(
 
 const animText = new Typed(".animated-text", {
   strings: [
-    "Software Engineer",
-    "Machine Learning Engineer",
-    "Web Developer",
-    "Game Developer",
+    "Computer Engineer",
+    "ML/AI Engineer",
+    "Researcher",
+    "Gamer",
     "Student",
   ],
   backSpeed: 100,
