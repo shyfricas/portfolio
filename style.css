@@ -13,7 +13,7 @@
 }
 
 * {
-  color: #fff;
+  color: #F2F5F7;
 }
 
 html {
@@ -22,12 +22,12 @@ html {
 }
 
 body {
-  background: #99a98f;
-  color: #fff;
+  background: #000000;
+  color: #F2F5F7;
 }
 /* Header Section */
 .header {
-  background: rgba(38, 58, 41, 0.9);
+  background: rgba(10, 15, 36, 0.9);
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ body {
 .logo {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #f3deba;
+  color: #1A73FF;
 }
 
 .menu-bar a {
@@ -52,7 +52,7 @@ body {
 }
 
 .menu-bar a:hover {
-  color: #f3deba;
+  color: #1A73FF;
 }
 
 #menu-btn {
@@ -77,7 +77,7 @@ section {
 }
 
 span {
-  color: #f3deba;
+  color: #1A73FF;
 }
 
 .home-bio h1 {
@@ -121,26 +121,26 @@ span {
 }
 
 .social-media a:hover {
-  color: #f3deba;
-  box-shadow: 0 0 1rem #f3deba;
+  color: #1A73FF;
+  box-shadow: 0 0 1rem #1A73FF;
 }
 
 .btn {
   display: inline-block;
-  background: #f3deba;
+  background: #FF007A;
   margin: 2rem 0;
   padding: 1rem 2.5rem;
   border-radius: 1.3rem;
   font-size: 1.3rem;
-  color: #263a29;
+  color: #F2F5F7;
   font-weight: 600;
   transform: 0.5s ease;
 }
 
 .btn:hover {
-  color: #f3deba;
-  background: #263a29;
-  box-shadow: 0 0 1rem #f3deba;
+  color: #1A73FF;
+  background: #0A0F24;
+  box-shadow: 0 0 1rem #1A73FF;
 }
 /* About Section */
 .about {
@@ -204,7 +204,7 @@ span {
 }
 
 .skills-card .bx:hover {
-  color: #263a29;
+  color: #0A0F24;
 }
 
 .skills-card h3 {
@@ -274,13 +274,13 @@ span {
   bottom: 0;
   width: 100%;
   padding: 1rem 1.2rem;
-  background: rgba(38, 58, 41, 0.7);
+  background: rgba(10, 15, 36, 0.7);
   text-align: left;
   z-index: 3;
 }
 .certifications .cert-caption h3 {
   font-size: 1.8rem;
-  color: #f3deba;
+  color: #1A73FF;
   margin: 0 0 0.2rem 0;
 }
 .certifications .cert-caption p {
@@ -290,7 +290,7 @@ span {
 }
 
 .card-overlay {
-  background: rgba(38, 58, 41, 0.8);
+  background: rgba(10, 15, 36, 0.8);
   position: absolute;
   left: 0;
   top: 0;
@@ -304,25 +304,25 @@ span {
 }
 
 .card-overlay:hover {
-  background: rgba(38, 58, 41, 0);
-  color: #263a29;
+  background: rgba(10, 15, 36, 0);
+  color: #0A0F24;
   transition: 0.4s all linear;
 }
 
 .card-overlay .bx {
-  color: #fff;
+  color: #F2F5F7;
   font-size: 1.8rem;
   padding: 1.1rem;
-  background: rgba(38, 58, 41, 0.8);
+  background: rgba(10, 15, 36, 0.8);
   border-radius: 0.8rem;
   transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .card-overlay .bx:hover {
   transform: scale(1.2);
-  color: #f3deba;
-  background: #263a29;
-  box-shadow: 0 0 2rem #f3deba;
+  color: #1A73FF;
+  background: #0A0F24;
+  box-shadow: 0 0 2rem #1A73FF;
 }
 
 /* Contact Section */
@@ -344,8 +344,8 @@ textarea {
   height: 50px;
   padding: 1rem;
   font-size: 1.5rem;
-  color: #fff;
-  background: rgba(38, 58, 41, 0.5);
+  color: #F2F5F7;
+  background: rgba(10, 15, 36, 0.5);
   border-radius: 1rem;
   resize: none;
 }
@@ -362,7 +362,7 @@ textarea {
 
 hr {
   margin: 1rem;
-  border-bottom: thin solid #fff;
+  border-bottom: thin solid #F2F5F7;
 }
 /* Responsive Section */
 @media (max-width: 1200px) {
@@ -388,7 +388,7 @@ hr {
     position: absolute;
     left: 0;
     top: 100%;
-    background: rgba(38, 58, 41, 0.9);
+    background: rgba(10, 15, 36, 0.9);
     display: none;
   }
   .menu-bar.active {
