@@ -36,7 +36,7 @@ ScrollReveal().reveal(
 const animText = new Typed(".animated-text", {
   strings: [
     "Computer Engineer",
-    "Technician
+    "Technician",
     "ML/AI Engineer",
     "Researcher",
     "Gamer",
