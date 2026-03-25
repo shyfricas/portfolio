@@ -166,6 +166,14 @@ span {
 .about-resume h3 {
   font-size: 2.4rem;
 }
+
+.about-resume h4 {
+  font-size: 1.8rem;
+  color: #FF007A;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .about-text p {
   font-size: 1.8rem;
 }
@@ -216,6 +224,146 @@ span {
   text-align: center;
   font-size: 1.3rem;
   opacity: 0.5;
+}
+
+/* Accomplishments Section */
+.accomplishments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8rem 10%;
+}
+
+.accomplishments-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, rgba(26, 115, 255, 0.1), rgba(255, 0, 122, 0.1));
+  border: 2px solid #1A73FF;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 3rem rgba(26, 115, 255, 0.3);
+}
+
+.feature-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #FF007A;
+  color: #F2F5F7;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-badge i {
+  font-size: 1.6rem;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content h3 {
+  font-size: 2.8rem;
+  color: #1A73FF;
+  margin-bottom: 1rem;
+}
+
+.feature-content p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1A73FF;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+  color: #FF007A;
+  gap: 1rem;
+}
+
+.feature-link i {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover i {
+  transform: translateX(0.5rem);
+}
+
+.feature-image {
+  font-size: 8rem;
+  color: #1A73FF;
+  opacity: 0.3;
+}
+
+.accomplishment-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.accomplishment-item {
+  background: rgba(10, 15, 36, 0.5);
+  border: 1px solid rgba(26, 115, 255, 0.3);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.accomplishment-item:hover {
+  background: rgba(26, 115, 255, 0.1);
+  border-color: #1A73FF;
+  transform: translateY(-0.3rem);
+}
+
+.accomplishment-item i {
+  font-size: 4rem;
+  color: #FF007A;
+  margin-bottom: 1rem;
+}
+
+.accomplishment-item h4 {
+  font-size: 1.8rem;
+  color: #1A73FF;
+  margin-bottom: 0.5rem;
+}
+
+.accomplishment-item p {
+  font-size: 1.3rem;
+  opacity: 0.7;
 }
 
 /* Project Section */
@@ -273,11 +421,26 @@ span {
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 1rem 1.2rem;
-  background: rgba(10, 15, 36, 0.7);
+  padding: 1.5rem 1.5rem;
+  background: rgba(10, 15, 36, 0.95);
   text-align: left;
   z-index: 3;
+  transition: all 0.3s ease;
 }
+
+.projects .cert-caption h3 {
+  font-size: 1.8rem;
+  color: #1A73FF;
+  margin: 0 0 0.5rem 0;
+}
+
+.projects .cert-caption p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.4;
+}
+
 .certifications .cert-caption h3 {
   font-size: 1.8rem;
   color: #1A73FF;
@@ -355,9 +518,15 @@ textarea {
 
 /* Footer Section */
 .footer {
-  padding: 2rem 10%;
+  padding: 3rem 10%;
   text-align: center;
   font-size: 1rem;
+}
+
+.footer-copyright {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0;
 }
 
 hr {
@@ -412,6 +581,20 @@ hr {
   .skills-items {
     grid-template-columns: repeat(2, 1fr);
   }
+  .accomplishment-cards {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-badge {
+    position: static;
+    margin-bottom: 1rem;
+  }
+  .feature-image {
+    font-size: 5rem;
+  }
 }
 
 @media (max-width: 620px) {
@@ -421,8 +604,17 @@ hr {
   .projects-items {
     grid-template-columns: repeat(1, 1fr);
   }
+  .accomplishment-cards {
+    grid-template-columns: 1fr;
+  }
   .heading {
     font-size: 2.7rem;
+  }
+  .feature-content h3 {
+    font-size: 2.2rem;
+  }
+  .feature-content p {
+    font-size: 1.4rem;
   }
 }
 
