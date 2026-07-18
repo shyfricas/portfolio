@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="x-icon" href="images/gc.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shaliah Fricas — Computer Engineering student, McNair Scholar in the ICARUS Lab, and UCaN Lab researcher working on sensor reliability in autonomous robots, hybrid RF/optical indoor positioning, and embedded systems. Founder of Your Favorite Engineer LLC."
+    />
+    <meta name="theme-color" content="#070B18" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Shaliah Fricas :) </title>
+  </head>
+  <body>
+    <!-- Interface symbol set: one cohesive family of game-inspired engineering marks -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true">
+      <!-- identity badge — player profile -->
+      <symbol id="sym-id" viewBox="0 0 24 24">
+        <path d="M4 3h16v18H4z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M9 2h6v3H9z" fill="currentColor" />
+        <circle cx="12" cy="11" r="2.6" fill="currentColor" />
+        <path d="M7 18c0-2.6 2.2-4 5-4s5 1.4 5 4" fill="none" stroke="currentColor" stroke-width="2" />
+      </symbol>
+      <!-- radar / live signal — active mission -->
+      <symbol id="sym-radar" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6" />
+        <path d="M12 12 19 5" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="1.8" fill="currentColor" />
+      </symbol>
+      <!-- hex crest with check — completed mission -->
+      <symbol id="sym-crest" viewBox="0 0 24 24">
+        <path d="M12 1.5 21 7v10l-9 5.5L3 17V7z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="m7.5 12.2 3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.4" />
+      </symbol>
+      <!-- targeting marker — accepted / upcoming mission -->
+      <symbol id="sym-target" viewBox="0 0 24 24">
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="1.8" fill="currentColor" />
+      </symbol>
+      <!-- inventory slot — projects / loadout -->
+      <symbol id="sym-slot" viewBox="0 0 24 24">
+        <path d="M3 6h18v15H3z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M8 6V3h8v3" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M3 12h18" stroke="currentColor" stroke-width="1.6" opacity="0.6" />
+      </symbol>
+      <!-- circuit node — skills -->
+      <symbol id="sym-node" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M12 2v6.5M12 15.5V22M2 12h6.5M15.5 12H22" stroke="currentColor" stroke-width="2" />
+        <path d="M4 4h3v3H4zM17 17h3v3h-3z" fill="currentColor" />
+      </symbol>
+      <!-- upgrade module — power-ups / certifications -->
+      <symbol id="sym-power" viewBox="0 0 24 24">
+        <path d="M12 1.5 21 7v10l-9 5.5L3 17V7z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M13.2 5.5 8 13h3.4l-1 5.5L16 11h-3.6z" fill="currentColor" />
+      </symbol>
+      <!-- trophy crest — achievements -->
+      <symbol id="sym-trophy" viewBox="0 0 24 24">
+        <path d="M7 3h10v6a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M7 5H3.5v2A4 4 0 0 0 7 11M17 5h3.5v2A4 4 0 0 1 17 11" fill="none" stroke="currentColor" stroke-width="1.8" />
+        <path d="M11 14h2v3h-2zM8 17h8v4H8z" fill="currentColor" />
+      </symbol>
+      <!-- logbook / route — adventure log -->
+      <symbol id="sym-log" viewBox="0 0 24 24">
+        <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M5 3v18" stroke="currentColor" stroke-width="3.4" />
+        <path d="M10 8h6M10 12h6M10 16h4" stroke="currentColor" stroke-width="1.8" />
+      </symbol>
+      <!-- workbench wrench-node — equipment -->
+      <symbol id="sym-bench" viewBox="0 0 24 24">
+        <path d="M20.5 6.5a5 5 0 0 1-6.6 6.2L7 19.6a2 2 0 0 1-2.8-2.8l6.9-6.9a5 5 0 0 1 6.2-6.6L14 6.6 17.4 10z" fill="none" stroke="currentColor" stroke-width="2" />
+      </symbol>
+      <!-- comms beacon — contact -->
+      <symbol id="sym-beacon" viewBox="0 0 24 24">
+        <path d="M12 10v11M8 21h8" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="8" r="2" fill="currentColor" />
+        <path d="M7.5 3.5a7 7 0 0 0 0 9M16.5 3.5a7 7 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.8" />
+      </symbol>
+      <!-- HUD scan-line brackets — inspection -->
+      <symbol id="sym-scan" viewBox="0 0 24 24">
+        <path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+      </symbol>
+    </svg>
+
+    <!-- Galaxy backdrop -->
+    <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
+
+    <!-- Progress bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="brand">
+        <a href="#home" class="logo">
+          <span class="logo-mark"><img src="images/gc.png" alt="Shaliah Fricas logo" /></span>
+          <span class="logo-text"
+            >Shaliah&nbsp;Fricas<em>ur favorite engineer</em></span
+          >
+        </a>
+        <div class="hp" aria-hidden="true" title="HP">
+          <span class="hp-heart"></span>
+          <span class="hp-heart"></span>
+          <span class="hp-heart"></span>
+          <span class="hp-heart"></span>
+          <span class="hp-heart"></span>
+        </div>
+      </div>
+      <nav class="menu-bar" id="menu-bar">
+        <a href="#about"><i class="bx bx-user"></i><span>About</span></a>
+        <a href="#path"><i class="bx bx-been-here"></i><span>Log</span></a>
+        <a href="#research"><i class="bx bx-brain"></i><span>Missions</span></a>
+        <a href="#recognition"><i class="bx bxs-medal"></i><span>Achievements</span></a>
+        <a href="#lab"><i class="bx bx-chip"></i><span>Workbench</span></a>
+        <a href="#projects"><i class="bx bxs-wrench"></i><span>Loadout</span></a>
+        <a href="#contact"><i class="bx bx-envelope"></i><span>Contact</span></a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+        <i class="bx bx-menu"></i>
+      </button>
+    </header>
+
+    <!-- Hero -->
+    <section class="home" id="home">
+      <canvas class="signal-canvas" id="signal-canvas" aria-hidden="true"></canvas>
+      <div class="home-inner">
+        <div class="home-bio">
+          <div class="pb" role="note" aria-label="Player build">
+            <div class="pb-head">
+              <svg class="sym" aria-hidden="true"><use href="#sym-id" /></svg>
+              <span>Player&nbsp;Build</span>
+            </div>
+            <dl class="pb-grid">
+              <div class="pb-row">
+                <dt>Class</dt>
+                <dd>Computer Engineering</dd>
+              </div>
+              <div class="pb-row">
+                <dt>Rank</dt>
+                <dd>Senior</dd>
+              </div>
+              <div class="pb-row pb-wide">
+                <dt>Affiliation</dt>
+                <dd>University of Massachusetts Boston</dd>
+              </div>
+              <div class="pb-row pb-wide">
+                <dt>Next Rank</dt>
+                <dd class="pb-next">Graduate · Spring 2027</dd>
+              </div>
+            </dl>
+          </div>
+          <h1>Shaliah&nbsp;Fricas</h1>
+          <h2 class="role-line">
+            I build&nbsp;<span class="animated-text" id="animated-text"></span
+            ><span class="caret">|</span>
+          </h2>
+          <p class="lede">
+            Computer Engineering student, <strong>McNair Research Fellow</strong>,
+            and <strong>Robotics Field Operator</strong> focused on human-centered
+            robotics, artificial intelligence, and embedded systems. I use
+            hands-on technical experience to create reliable,
+            <strong>user-focused</strong> engineering solutions.
+          </p>
+          <div class="home-actions">
+            <a
+              href="https://www.linkedin.com/in/shaliahfricas"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
+              <i class="bx bxl-linkedin"></i> LinkedIn
+            </a>
+            <a
+              href="https://github.com/shyfricas"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              <i class="bx bxl-github"></i> GitHub
+            </a>
+            <a
+              href="images/Shaliah_Fricas___Resume.pdf"
+              class="btn btn-ghost"
+              download="Shaliah_Fricas_Resume"
+            >
+              <i class="bx bx-download"></i> Resume
+            </a>
+          </div>
+        </div>
+        <div class="home-portrait">
+          <div class="portrait-frame">
+            <img src="images/headshot.png" alt="Portrait of Shaliah Fricas" />
+            <span class="frame-tag frame-tag-tl">ROBOTICS</span>
+            <span class="frame-tag frame-tag-br">EST. UMB</span>
+          </div>
+          <!-- TurtleBot3 Burger: LiDAR scans toward the cursor -->
+          <div class="tbot" id="tbot" title="TurtleBot3 Burger — my ICARUS Lab research robot" aria-hidden="true">
+            <div class="tbot-rig">
+              <div class="tbot-wheel tbot-wheel-l"></div>
+              <div class="tbot-wheel tbot-wheel-r"></div>
+              <div class="tbot-body">
+                <div class="tbot-deck tbot-deck-3">
+                  <span class="tbot-lidar">
+                    <span class="tbot-beam" id="tbot-beam"></span>
+                    <span class="tbot-lidar-core"></span>
+                  </span>
+                </div>
+                <div class="tbot-deck tbot-deck-2">
+                  <span class="tbot-led tbot-led-c"></span>
+                  <span class="tbot-led tbot-led-b"></span>
+                  <span class="tbot-board"></span>
+                </div>
+                <div class="tbot-deck tbot-deck-1">
+                  <span class="tbot-board tbot-board-wide"></span>
+                </div>
+              </div>
+            </div>
+            <span class="tbot-tag"
+              ><span class="tag-full">SideKick</span
+              ><span class="tag-short">TurtleBot3</span></span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>start</span><i class="bx bx-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-id" /></svg>01 — About</p>
+      <div class="heading">
+        <h2>Engineer, Researcher, <span>Builder.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm an undergraduate at the <strong>University of Massachusetts Boston</strong> pursuing a B.S.
+            in Computer Engineering with a minor in Computer Science. As a
+            <strong>McNair Scholar</strong> in the <strong>ICARUS Lab</strong>, I
+            study how autonomous robots respond to manipulated or unreliable
+            sensor input — testing a TurtleBot3 Burger under noisy and spoofed
+            conditions to make navigation more reliable for safer assistive
+            robotics, mentored by Prof. Ioannis Zografopoulos.
+          </p>
+          <p>
+            In the <strong>UCaN Lab</strong> under Prof. Michael Rahaim, I worked
+            on hybrid RF/optical indoor localization using SDR platforms. My task was to
+            explore <strong>machine learning</strong> approaches: analyzing wireless signal data in
+            MATLAB and building models for localization and environment
+            classification - having the opportunity to present our work as finalists 
+            for the <strong>AFRL SDR University Challenge</strong>.
+          </p>
+          <p>
+            Beyond campus, I run
+            <strong>Ur Favorite Engineer LLC</strong>, offering web
+            development, 3D printing, and AI automation. I care most about
+            robotics, embedded systems, and assistive technology — systems that
+            genuinely help people in the real world.
+          </p>
+        </div>
+        <ul class="about-facts">
+          <li>
+            <span class="fact-k">Focus</span>
+            <span class="fact-v">Robotics · Assistive Tech · Machine Learning</span>
+          </li>
+          <li>
+            <span class="fact-k">Research</span>
+            <span class="fact-v">ICARUS Lab · UCaN Lab</span>
+          </li>
+          <li>
+            <span class="fact-k">Program</span>
+            <span class="fact-v">McNair Scholars · Oxford AI Programme</span>
+          </li>
+          <li>
+            <span class="fact-k">Team</span>
+            <span class="fact-v">UMass Robotics &amp; Engineering · 2027 MassRobotics</span>
+          </li>
+          <li>
+            <span class="fact-k">Business</span>
+            <span class="fact-v">Ur Favorite Engineer LLC</span>
+          </li>
+          <li>
+            <span class="fact-k">Toolbelt</span>
+            <span class="fact-v">ROS 2 · SDR · GNU Radio · MATLAB · Python · C++</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Adventure Log -->
+    <section class="path section" id="path">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-log" /></svg>02 — Adventure Log</p>
+      <div class="heading">
+        <h2>Adventure <span>Log</span></h2>
+        <p class="heading-sub">Timeline of my past and current adventures</p>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"><span class="timeline-fill" id="timeline-fill"></span></div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">May 2026 — Present</span>
+            <span class="tl-kind kind-work">Student Employment</span>
+            <h3>IT Service Desk Analyst | UMass Boston</h3>
+            <p>First-line (Tier 1) technical support for students, faculty, and staff in IT Client Services — resolving hardware, software, account, and connectivity issues by phone, chat, and in person, and escalating complex cases.</p>
+            <p class="tl-tools"><span>Systems</span>Windows · macOS · Linux · ticketing &amp; remote support</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Feb 2026 — Present</span>
+            <span class="tl-kind kind-role">Research</span>
+            <h3>McNair Scholar | ICARUS Lab, UMass Boston</h3>
+            <p>Testing how autonomous robots respond to manipulated or incorrect sensor input — using OPAL-RT hardware-in-the-loop — to improve navigation reliability for safer assistive robotics. Mentor: Prof. Ioannis Zografopoulos.</p>
+            <p class="tl-tools"><span>Systems</span>TurtleBot3 · ROS 2 · LiDAR · OPAL-RT · Python</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">2026 — Present</span>
+            <span class="tl-kind kind-role">Team</span>
+            <h3>UMass Robotics &amp; Engineering Club</h3>
+            <p>Robotics, Automation &amp; Controls on the team building for the 2027 MassRobotics competition.</p>
+            <p class="tl-tools"><span>Systems</span>Robotics prototyping · automation &amp; controls · CAD · PCB Design </p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Jan 2026 — Present</span>
+            <span class="tl-kind kind-work">Internship</span>
+            <h3>Robotics Field Concierge | Operation Autopilot, Inc.</h3>
+            <p>Supporting live deployments of autonomous cleaning robots — diagnosing navigation, task-execution, and docking issues while coordinating field operations and reporting system health to customers and teams.</p>
+            <p class="tl-tools"><span>Systems</span>Autonomous robot fleets · navigation &amp; docking diagnostics · field ops reporting</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Sep 2025 — May 2026</span>
+            <span class="tl-kind kind-role">Research</span>
+            <h3>Undergraduate Researcher | UCaN Lab</h3>
+            <p>Hybrid RF/optical indoor localization (Indoor GPS). Worked on the machine learning to analyze wireless signal data in MATLAB while also modeling localization and environment classification. Advisor: Prof. Michael Rahaim.</p>
+            <p class="tl-tools"><span>Systems</span>MATLAB · Python · SDR / GNU Radio · signal classification</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Aug — Sep 2025 · Remote</span>
+            <span class="tl-kind kind-work">Internship</span>
+            <h3>AI Agent Builder | NeuralSeek</h3>
+            <p>Designed and deployed generative-AI agents that address real-world challenges across HR, healthcare, and business.</p>
+            <p class="tl-tools"><span>Systems</span>NeuralSeek · LLM agent workflows · data integration</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">2025</span>
+            <span class="tl-kind kind-course">Program</span>
+            <h3>Oxford AI Programme | Alumna</h3>
+            <p>Completed the Oxford Saïd Business School Artificial Intelligence Programme.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Aug 2023 — Jan 2025</span>
+            <span class="tl-kind kind-work">Tech Support</span>
+            <h3>Certified Apple Computing Advisor | Best Buy</h3>
+            <p>Diagnosed and resolved system failures, component malfunctions, and software issues for optimal performance; cleared queue backlogs by triaging issues and communicating wait times, earning consistently positive survey feedback.</p>
+            <p class="tl-tools"><span>Systems</span>macOS · iOS · Apple diagnostics · customer triage</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Jun 2023 — Dec 2024</span>
+            <span class="tl-kind kind-work">Internship</span>
+            <h3>Operations &amp; App Development | Arka HR</h3>
+            <p>Streamlined internal HR workflows by organizing data, coordinating across teams, and supporting process improvements with cross-functional collaboration.</p>
+            <p class="tl-tools"><span>Systems</span>App development · data organization · process workflows</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">Ongoing</span>
+            <span class="tl-kind kind-work">Business</span>
+            <h3>Founder | Ur Favorite Engineer LLC</h3>
+            <p>Freelance web development, 3D printing, and AI-automation consulting for real clients.</p>
+            <p class="tl-tools"><span>Systems</span>Web development · 3D printing · AI automation</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-content">
+            <span class="tl-date">UMass Boston</span>
+            <span class="tl-kind kind-course">Coursework</span>
+            <h3>Relevant coursework</h3>
+            <p>Honors Applied AI, Digital Systems, Embedded Systems, Data Structures &amp; Algorithms, Circuit Analysis, Linear Algebra, Discrete Math, and Calculus I–III.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Research missions -->
+    <section class="research section" id="research">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-radar" /></svg>03 — Research missions</p>
+      <div class="heading">
+        <h2>Research <span>Missions</span></h2>
+        <p class="heading-sub">Active and Completed Missions</p>
+      </div>
+
+      <!-- ═══ ACTIVE MISSION — McNair Scholar × ICARUS Lab ═══ -->
+      <article class="mission mission-active" aria-labelledby="m1-title">
+        <div class="mission-inner">
+          <header class="mission-bar">
+            <span class="mission-status status-active">
+              <svg class="sym" aria-hidden="true"><use href="#sym-radar" /></svg>
+              <span class="status-ping" aria-hidden="true"></span>
+              Active mission
+            </span>
+            <span class="mission-org">McNair Scholar · ICARUS Lab · UMass Boston</span>
+          </header>
+
+          <h3 id="m1-title" class="mission-title">
+            Sensor reliability in autonomous robot navigation
+          </h3>
+          <p class="mission-question">
+            <span class="mq-k">Research question</span>
+            How do sensor-based navigation systems in autonomous robots respond
+            to manipulated or incorrect sensor input — and how can we make them
+            more reliable?
+          </p>
+
+          <div class="mission-grid">
+            <figure
+              class="mission-media"
+              id="m1-photo"
+              tabindex="0"
+              role="button"
+              aria-label="Enlarge photo of the TurtleBot3 Burger research robot"
+            >
+              <span class="hud-c hud-tl" aria-hidden="true"></span>
+              <span class="hud-c hud-tr" aria-hidden="true"></span>
+              <span class="hud-c hud-bl" aria-hidden="true"></span>
+              <span class="hud-c hud-br" aria-hidden="true"></span>
+              <img
+                src="images/turtlebot-full.jpg"
+                alt="Fully assembled TurtleBot3 Burger — LiDAR unit on top, Raspberry Pi camera in a pink 3D-printed mount, stacked waffle plates with Raspberry Pi 4 and OpenCR"
+              />
+              <figcaption>
+                <svg class="sym" aria-hidden="true"><use href="#sym-scan" /></svg>
+                Field unit · TurtleBot3 Burger · LiDAR + Camera + Raspberry&nbsp;Pi&nbsp;4
+                <em>tap to enlarge</em>
+              </figcaption>
+            </figure>
+
+            <div class="mission-body">
+              <p>
+                This research investigates how sensor-based navigation systems in
+                autonomous robots respond to manipulated, delayed, noisy, or
+                otherwise incorrect sensor input. Using a
+                <strong>TurtleBot3 Burger</strong>, the project evaluates how
+                unreliable LiDAR, camera, IMU, and related sensor data affect
+                mapping, localization, obstacle avoidance, and navigation.
+              </p>
+              <p>
+                The research compares normal and manipulated conditions, measures
+                navigation performance, and explores methods such as
+                <strong>filtering</strong>, <strong>sensor redundancy</strong>,
+                and <strong>validation checks</strong> to improve reliability —
+                toward safer assistive robotics.
+              </p>
+
+              <dl class="mission-meta">
+                <div>
+                  <dt>Objective</dt>
+                  <dd>Quantify navigation degradation under unreliable sensing; test defenses that restore it</dd>
+                </div>
+                <div>
+                  <dt>Mentor · Lab</dt>
+                  <dd>Prof. Ioannis Zografopoulos · ICARUS Lab</dd>
+                </div>
+                <div>
+                  <dt>Program</dt>
+                  <dd>McNair Scholars · Feb 2026 — Present</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>
+                    <span class="status-chip chip-live">In progress — baseline mapping &amp; sensor-manipulation trials</span>
+                  </dd>
+                </div>
+              </dl>
+
+              <p class="mission-tech-label">Technologies &amp; equipment</p>
+              <ul class="chip-row" aria-label="Technologies and equipment">
+                <li>TurtleBot3 Burger</li>
+                <li>ROS 2</li>
+                <li>Ubuntu</li>
+                <li>LiDAR</li>
+                <li>Camera</li>
+                <li>IMU</li>
+                <li>Raspberry Pi</li>
+                <li>OpenCR</li>
+                <li>OPAL-RT</li>
+                <li>Python</li>
+                <li>Navigation &amp; mapping tools</li>
+              </ul>
+
+              <div class="mission-links">
+                <a
+                  href="images/McNair_Research_Proposal.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-primary"
+                >
+                  <i class="bx bx-file"></i> Research proposal
+                </a>
+                <a
+                  href="https://drive.google.com/drive/folders/15rwQY5mAljiS1W2zsv25B9lW-M5XYLcm"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                >
+                  <i class="bx bx-folder-open"></i> Robotics data
+                </a>
+                <a
+                  href="https://github.com/shyfricas"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                >
+                  <i class="bx bxl-github"></i> GitHub
+                </a>
+              </div>
+              <p class="mission-note">
+                Posters, demonstrations, and build videos will be logged here as
+                the mission progresses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ═══ COMPLETED MISSION — UCaN Lab ═══ -->
+      <article class="mission mission-complete" aria-labelledby="m2-title">
+        <div class="mission-inner">
+          <header class="mission-bar">
+            <span class="mission-status status-complete">
+              <svg class="sym" aria-hidden="true"><use href="#sym-crest" /></svg>
+              Mission complete
+            </span>
+            <span class="mission-org">UCaN Lab · UMass Boston · MassURC 2026</span>
+          </header>
+
+          <h3 id="m2-title" class="mission-title">
+            Hybrid radio/optical indoor positioning
+          </h3>
+
+          <div class="research-grid">
+            <figure class="poster" id="poster">
+              <img
+                src="images/research-poster.jpg"
+                alt="Research poster: Experimental Testing and Analysis of a Hybrid Radio/Optical System for Indoor Positioning"
+              />
+              <figcaption>
+                <i class="bx bx-expand-alt"></i> Tap to enlarge the poster
+              </figcaption>
+            </figure>
+
+            <div class="research-body">
+              <p class="research-lead">
+                GPS fails indoors, where healthcare, warehouses, and navigation
+                need it most. Our testbed fused <strong>RF fingerprinting</strong>
+                (works without line-of-sight) with
+                <strong>visible light positioning</strong> (high accuracy when
+                visible) so localization stays reliable across environments.
+              </p>
+
+              <div class="stat-row">
+                <div class="stat-card">
+                  <span class="stat-num" data-count="85.2" data-suffix="%">0%</span>
+                  <span class="stat-label">Motion-classification accuracy at a 2&nbsp;ms window</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-num" data-count="51.0" data-suffix="%">0%</span>
+                  <span class="stat-label">At a 20&nbsp;ms window — shorter windows capture motion better</span>
+                </div>
+              </div>
+
+              <h4 class="contrib-title">What I accomplished — the machine learning</h4>
+              <ul class="contrib-list">
+                <li>
+                  <i class="bx bx-line-chart"></i> Collected &amp; analyzed wireless
+                  signal data in MATLAB across the SDR testbed
+                </li>
+                <li>
+                  <i class="bx bx-brain"></i> Built machine-learning models for
+                  localization and environment / signal classification
+                </li>
+                <li>
+                  <i class="bx bx-slideshow"></i> Contributed to experimental design,
+                  technical documentation &amp; conference presentations (MassURC,
+                  AFRL SDR University Challenge)
+                </li>
+              </ul>
+
+              <div class="terminal" id="terminal" aria-hidden="true">
+                <div class="terminal-bar">
+                  <span class="tdot tdot-r"></span>
+                  <span class="tdot tdot-y"></span>
+                  <span class="tdot tdot-g"></span>
+                  <div class="terminal-tabs">
+                    <button class="tt active" data-snippet="matlab">features.m</button>
+                    <button class="tt" data-snippet="ml">classify.py</button>
+                  </div>
+                </div>
+                <pre class="terminal-body"><code id="terminal-code"></code><span class="term-caret">▋</span></pre>
+              </div>
+
+              <div class="research-links">
+                <a
+                  href="https://drive.google.com/drive/folders/19iKRz1QlN1Wcs9XoBVGZIV7egUKRd1fY"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                >
+                  <i class="bx bx-folder-open"></i> UCaN Lab progress
+                </a>
+              </div>
+
+              <p class="research-credit">
+                Team: Giovani DeOliveira, Shaliah Fricas, David Malone, Austin Trinh,
+                Shabnam Azizi · Dr. Michael B. Rahaim. Partially supported by the NSF
+                ERI Program (Grant No. 2347514).
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ═══ MISSION ACCEPTED — MassRobotics 2027 ═══ -->
+      <article class="mission mission-accepted" aria-labelledby="m3-title">
+        <div class="mission-inner">
+          <header class="mission-bar">
+            <span class="mission-status status-accepted">
+              <svg class="sym" aria-hidden="true"><use href="#sym-target" /></svg>
+              Mission accepted
+            </span>
+            <span class="mission-org">UMass Robotics &amp; Engineering Club</span>
+          </header>
+
+          <div class="accepted-grid">
+            <h3 id="m3-title" class="mission-title">MassRobotics Competition</h3>
+            <dl class="mission-meta meta-inline">
+              <div>
+                <dt>Role</dt>
+                <dd>Engineering Robotics Team | Robotics, Automation &amp; Controls</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd><span class="status-chip chip-prep">Preparing</span></dd>
+              </div>
+              <div>
+                <dt>Deployment</dt>
+                <dd>Spring 2027</dd>
+              </div>
+            </dl>
+          </div>
+          <p class="accepted-note">
+            Building with the club's competition team ahead of the 2027
+            MassRobotics event — this card unlocks as an achievement once the
+            mission is complete.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Achievements & recognition -->
+    <section class="recognition section" id="recognition">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-trophy" /></svg>04 — Achievements</p>
+      <div class="recognition-band">
+        <div class="recognition-text">
+          <div class="achv achv-big unlock" role="note">
+            <span class="achv-icon"><svg class="sym" aria-hidden="true"><use href="#sym-trophy" /></svg></span>
+            <span class="achv-body">
+              <span class="achv-label">Achievement unlocked</span>
+              <span class="achv-name">AFRL Finalist</span>
+            </span>
+            <span class="achv-rarity">2025–26</span>
+          </div>
+          <h2>
+            Finalist — U.S. Air Force Research Laboratory
+            <span>SDR University Challenge</span>
+          </h2>
+          <p>
+            Our UCaN Lab team was selected as a finalist in the 2025–26 Software
+            Defined Radio University Challenge hosted by AFRL. We built the test
+            infrastructure for the hybrid indoor-localization work — and as
+            finalists, we're heading to <strong>Dayton, Ohio</strong> to present
+            to AFRL judges in person.
+          </p>
+          <ul class="recognition-meta">
+            <li><i class="bx bx-group"></i> DeOliveira · Trinh · Malone · Fricas</li>
+            <li><i class="bx bx-buildings"></i> UMass Boston · UCaN Lab</li>
+            <li><i class="bx bx-trophy"></i> Top finalists → in-person round</li>
+          </ul>
+        </div>
+        <figure class="recognition-img">
+          <img
+            src="images/afrl-shoutout.jpg"
+            alt="UMass Boston College of Science and Mathematics announcement congratulating the engineering students selected as AFRL SDR Challenge finalists"
+          />
+        </figure>
+      </div>
+
+      <div class="achv-grid">
+        <article class="achv achv-card2 unlock" role="note">
+          <span class="achv-icon"><svg class="sym" aria-hidden="true"><use href="#sym-trophy" /></svg></span>
+          <span class="achv-body">
+            <span class="achv-label">Achievement unlocked</span>
+            <span class="achv-name">McNair Scholar</span>
+            <span class="achv-desc">
+              Selected for UMass Boston's TRIO McNair Scholars Program (2026) — a
+              federally funded research program preparing scholars for doctoral
+              study. Funds my ICARUS Lab sensor-reliability research.
+            </span>
+          </span>
+          <span class="achv-rarity">2026</span>
+        </article>
+
+        <article class="achv achv-card2 unlock" role="note">
+          <span class="achv-icon"><svg class="sym" aria-hidden="true"><use href="#sym-trophy" /></svg></span>
+          <span class="achv-body">
+            <span class="achv-label">Achievement unlocked</span>
+            <span class="achv-name">Featured by UMB Science &amp; Math</span>
+            <span class="achv-desc">
+              Recognized by the UMass Boston College of Science &amp; Mathematics
+              in its announcement congratulating the AFRL SDR Challenge finalist
+              team.
+            </span>
+          </span>
+          <span class="achv-rarity">2026</span>
+        </article>
+
+        <article class="achv achv-card2 unlock" role="note">
+          <span class="achv-icon"><svg class="sym" aria-hidden="true"><use href="#sym-trophy" /></svg></span>
+          <span class="achv-body">
+            <span class="achv-label">Achievement unlocked</span>
+            <span class="achv-name">Influential Women in Tech</span>
+            <span class="achv-desc">
+              Featured on InfluentialWomen.com for my work in AI automation,
+              embedded systems engineering, and advancing women in STEM fields.
+            </span>
+            <a
+              class="achv-link"
+              href="https://influentialwomen.com/connect/shaliah-fricas"
+              target="_blank"
+              rel="noopener"
+              >Read the feature <i class="bx bx-link-external" aria-hidden="true"></i
+            ></a>
+          </span>
+          <span class="achv-rarity">2026</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Workbench -->
+    <section class="lab section" id="lab">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-bench" /></svg>05 — Workbench</p>
+      <div class="heading">
+        <h2>Equipment <span>workbench</span></h2>
+        <p class="heading-sub">Select any item to inspect it · drag or use the arrows to scroll the bench →</p>
+      </div>
+
+      <div class="lab-scroller-wrap">
+        <button class="lab-arrow lab-arrow-left" id="lab-left" aria-label="Scroll left">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+        <div class="lab-scroller" id="lab-scroller">
+          <article class="lab-card lab-card-photo" data-gear="turtlebot" tabindex="0" role="button" aria-label="Inspect TurtleBot3 build">
+            <div class="lab-photo">
+              <img src="images/lab-turtlebot.jpg" alt="TurtleBot3 build with Raspberry Pi 4 and OpenCR control board" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Robotics platform</span>
+              <h3>TurtleBot3 · Raspberry Pi 4 · OpenCR</h3>
+              <p>Building my research robot — Raspberry Pi 4, OpenCR control board, and camera module for ROS navigation tests.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="zybo" tabindex="0" role="button" aria-label="Inspect Digilent Zybo Z7">
+            <div class="lab-photo">
+              <img src="images/lab-zybo.jpg" alt="Digilent Zybo Z7 FPGA development board with Xilinx Zynq" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">FPGA · SoC</span>
+              <h3>Digilent Zybo Z7</h3>
+              <p>Xilinx Zynq XC7Z010 board I program in VHDL for digital-systems labs and signal logic.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="opalrt" tabindex="0" role="button" aria-label="Inspect OPAL-RT OP4610XG">
+            <div class="lab-photo">
+              <img src="images/lab-opalrt.jpg" alt="OPAL-RT OP4610XG real-time simulator in the ICARUS Lab rack" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Hardware-in-the-loop</span>
+              <h3>OPAL-RT OP4610XG</h3>
+              <p>FPGA-based real-time simulator in the ICARUS Lab — the rig behind the hardware-in-the-loop robot testing.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="scope" tabindex="0" role="button" aria-label="Inspect oscilloscope bench">
+            <div class="lab-photo">
+              <img src="images/lab-scope.jpg" alt="Tektronix 2215 oscilloscope and BK Precision function generator on the circuits bench" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Measurement</span>
+              <h3>Oscilloscope bench</h3>
+              <p>Tektronix 2215 scope paired with a BK Precision generator — reading waveforms for phase, frequency, and filter labs.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="funcgen" tabindex="0" role="button" aria-label="Inspect Tektronix AFG3022C">
+            <div class="lab-photo">
+              <img src="images/lab-funcgen.jpg" alt="Tektronix AFG3022C dual channel arbitrary function generator" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Signal source</span>
+              <h3>Tektronix AFG3022C</h3>
+              <p>Dual-channel arbitrary/function generator (25 MHz, 250 MS/s) driving circuits under test.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="psu" tabindex="0" role="button" aria-label="Inspect power bench">
+            <div class="lab-photo">
+              <img src="images/lab-psu.jpg" alt="Tektronix DMM 4020 multimeter above a Keithley 2230-30-1 triple channel DC power supply" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Power</span>
+              <h3>Keithley 2230-30-1 · Tek DMM 4020</h3>
+              <p>Triple-channel DC supply and 5½-digit multimeter for powering and characterizing circuits.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="dmm" tabindex="0" role="button" aria-label="Inspect Keithley DMM6500">
+            <div class="lab-photo">
+              <img src="images/lab-dmm.jpg" alt="Keithley DMM6500 6.5 digit benchtop multimeter" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Measurement</span>
+              <h3>Keithley DMM6500</h3>
+              <p>6½-digit touchscreen multimeter for precision voltage, current, and resistance readings.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card" data-gear="matlab" tabindex="0" role="button" aria-label="Inspect MATLAB and Python tooling">
+            <div class="lab-icon"><i class="bx bx-pulse"></i></div>
+            <div class="lab-meta">
+              <span class="lab-tag">Analysis</span>
+              <h3>MATLAB &amp; Python</h3>
+              <p>Signal processing and ML pipelines — from Fourier analysis to localization models.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card" data-gear="sdr" tabindex="0" role="button" aria-label="Inspect SDR and GNU Radio tooling">
+            <div class="lab-icon"><i class="bx bx-broadcast"></i></div>
+            <div class="lab-meta">
+              <span class="lab-tag">RF</span>
+              <h3>SDR &amp; GNU Radio</h3>
+              <p>Capturing I/Q data and building flowgraphs for the RF localization testbed.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card" data-gear="ltspice" tabindex="0" role="button" aria-label="Inspect LTspice tooling">
+            <div class="lab-icon"><i class="bx bx-network-chart"></i></div>
+            <div class="lab-meta">
+              <span class="lab-tag">Simulation</span>
+              <h3>LTspice</h3>
+              <p>Simulating RC/RL filters and sinusoidal response to verify circuits before I build.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card" data-gear="fab" tabindex="0" role="button" aria-label="Inspect CAD and 3D printing tooling">
+            <div class="lab-icon"><i class="bx bx-cube-alt"></i></div>
+            <div class="lab-meta">
+              <span class="lab-tag">Fabrication</span>
+              <h3>CAD &amp; 3D Printing</h3>
+              <p>Designing and printing enclosures and mounts — plus soldering and prototyping for embedded builds.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+        </div>
+        <button class="lab-arrow lab-arrow-right" id="lab-right" aria-label="Scroll right">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+<!-- Skills -->
+    <section class="skills section" id="skills">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-node" /></svg>06 — Skills</p>
+      <div class="heading">
+        <h2>Skill <span>nodes</span></h2>
+        <p class="heading-sub">The technical toolkit behind the missions</p>
+      </div>
+      <div class="skills-items">
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>Embedded / Arduino</h3>
+          <p>Prototyping circuits and firmware in C/C++ — debouncing, timers/interrupts, Serial/I²C, sensors and servos.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>Python</h3>
+          <p>Data structures, error handling, and scientific libraries for analysis, ML, and automation pipelines.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>MATLAB</h3>
+          <p>Scripting lab-data workflows into clear, reusable plots and tables for signal and circuit analysis.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>VHDL / FPGA</h3>
+          <p>Digital logic, FSMs, and sequence detectors implemented on Zynq/FPGA hardware with Vivado.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>ROS 2 &amp; Robotics</h3>
+          <p>Robot bring-up, sensor integration, and navigation testing on the TurtleBot3 research platform.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>AI Agents</h3>
+          <p>Designing and testing LLM/agent workflows across GPT, Claude, and Gemini with reliable data integration.</p>
+        </div>
+        <div class="skills-card">
+          <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
+          <h3>CAD &amp; 3D Printing</h3>
+          <p>Detailed CAD models and rapid prototyping for enclosures, mounts, and robotics parts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Power-ups -->
+    <section class="certifications section" id="certifications">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-power" /></svg>07 — Power-ups</p>
+      <div class="heading">
+        <h2>Power-ups <span>&amp; credentials</span></h2>
+        <p class="heading-sub">Certified capabilities — each links to its verified credential</p>
+      </div>
+      <div class="card-grid">
+        <div class="media-card pw-card">
+          <div class="pw-strip"><svg class="sym" aria-hidden="true"><use href="#sym-power" /></svg><span>Power-up acquired</span></div>
+          <img src="images/cert1.png" alt="AI Agent Foundations Certificate" />
+          <div class="card-overlay">
+            <a href="https://credsverse.com/credentials/18939aa3-f3d8-4b59-9cd0-cf293f611e16" target="_blank" rel="noopener" aria-label="View AI Agent Foundations credential"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>AI Agent Foundations</h3>
+            <p>NeuralSeek · 2025</p>
+            <p class="pw-skills"><span>Grants</span>Agent design · retrieval &amp; grounding · prompt workflows</p>
+          </div>
+        </div>
+        <div class="media-card pw-card">
+          <div class="pw-strip"><svg class="sym" aria-hidden="true"><use href="#sym-power" /></svg><span>Power-up acquired</span></div>
+          <img src="images/cert2.png" alt="Agentic AI for Business Certificate" />
+          <div class="card-overlay">
+            <a href="https://credsverse.com/credentials/6f09db50-1c71-468c-a651-e603a5094668" target="_blank" rel="noopener" aria-label="View Agentic AI for Business credential"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Agentic AI for Business</h3>
+            <p>NeuralSeek · 2025</p>
+            <p class="pw-skills"><span>Grants</span>Business-process agents · deployment · evaluation</p>
+          </div>
+        </div>
+        <div class="media-card pw-card">
+          <div class="pw-strip"><svg class="sym" aria-hidden="true"><use href="#sym-power" /></svg><span>Power-up acquired</span></div>
+          <img src="images/AgentArchitecture.png" alt="Multi-Tier Agent Architecture Certificate" />
+          <div class="card-overlay">
+            <a href="https://credsverse.com/credentials/a8967f98-6f75-49e8-a0de-0efdf03a7323" target="_blank" rel="noopener" aria-label="View Multi-Tier Agent Architecture credential"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Multi-Tier Agent Architecture</h3>
+            <p>NeuralSeek · 2025</p>
+            <p class="pw-skills"><span>Grants</span>Multi-agent orchestration · tool use · system design</p>
+          </div>
+        </div>
+        <div class="media-card pw-card">
+          <div class="pw-strip"><svg class="sym" aria-hidden="true"><use href="#sym-power" /></svg><span>Power-up acquired</span></div>
+          <img src="images/oxf.png" alt="Oxford AI Programme Certificate" />
+          <div class="card-overlay">
+            <a href="https://oxford.credential.getsmarter.com/bf3cd609-3783-4021-83df-ed98ee22a062#acc.Q2hUCNFY" target="_blank" rel="noopener" aria-label="View Oxford AI Programme credential"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Oxford AI Programme</h3>
+            <p>University of Oxford, Saïd Business School · 2025</p>
+            <p class="pw-skills"><span>Grants</span>AI strategy · ML fundamentals · responsible deployment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loadout -->
+    <section class="projects section" id="projects">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-slot" /></svg>08 — Loadout</p>
+      <div class="heading">
+        <h2>My <span>loadout</span></h2>
+        <p class="heading-sub">Equipped systems — select a slot to inspect the full build</p>
+      </div>
+      <div class="card-grid">
+        <div class="media-card lo-card" data-project="mediseek" tabindex="0" role="button" aria-label="Inspect MediSeek">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/Fricas.jpg" alt="MediSeek AI troubleshooting agent" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/file/d/1Q_cxshvEWa62OMOeEzWxSlPKlFfLyp2v/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Open MediSeek demo"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>MediSeek</h3>
+            <p>AI-powered biomedical device troubleshooting agent for healthcare professionals.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="companion" tabindex="0" role="button" aria-label="Inspect Robot Companion Prototype">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/robot-companion-print.jpg" alt="3D-printed robot companion parts fresh off the print bed" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/drive/folders/1umzrrsLL2Iz6OcSJdVIZnkS8StVDBA4_" target="_blank" rel="noopener" aria-label="Open Robot Companion Prototype files"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Robot Companion Prototype</h3>
+            <p>Embedded robotics prototype exploring expressive human-robot interaction.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="pc" tabindex="0" role="button" aria-label="Inspect Custom PC Build">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/built pc.jpg" alt="Custom PC build" />
+          <div class="card-caption">
+            <h3>Custom PC Build</h3>
+            <p>Full hardware build and assembly from components.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="cad" tabindex="0" role="button" aria-label="Inspect 3D CAD and Manufacturing">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/CAD.png" alt="3D CAD design and printing" />
+          <div class="card-overlay">
+            <a href="https://cad.onshape.com/documents/773beb91267d6aa8bda018d6/w/b99abb94f881588028c7297e/e/31bd2a92c06c45acb058853c" target="_blank" rel="noopener" aria-label="Open CAD document"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>3D CAD &amp; Manufacturing</h3>
+            <p>Design and rapid prototyping for engineering projects.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="binary" tabindex="0" role="button" aria-label="Inspect Binary Calculator">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/tinkercad.png" alt="Binary calculator circuit" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/drive/folders/1eeOzxrOwPxCz8A4reeVSvs_Iioijv14B?usp=sharing" target="_blank" rel="noopener" aria-label="Open Binary Calculator files"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Binary Calculator</h3>
+            <p>Logic-circuit design with discrete components and microcontrollers.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="audio" tabindex="0" role="button" aria-label="Inspect Audio Processing Engine">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/audio-dashboard.jpg" alt="Audio analytics dashboard showing file properties, quality analysis, and waveform preview" />
+          <div class="card-overlay">
+            <a href="https://github.com/shyfricas/Audio-Recording-Processing-Program" target="_blank" rel="noopener" aria-label="Open Audio Processing Engine repository"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Audio Processing Engine</h3>
+            <p>C++ solution for managing and processing audio recording files.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="speech" tabindex="0" role="button" aria-label="Inspect Speech Recognition">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/sr-code.png" alt="Python speech-recognition code snippet using the microphone and Google recognizer" />
+          <div class="card-overlay">
+            <a href="https://github.com/shyfricas/speech-recognition.git" target="_blank" rel="noopener" aria-label="Open Speech Recognition repository"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Speech Recognition</h3>
+            <p>ML model processing voice commands as assistive tech for hearing impairments.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="tbresearch" tabindex="0" role="button" aria-label="Inspect TurtleBot3 Research">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/turtlebot-full.jpg" alt="Fully assembled TurtleBot3 Burger with LiDAR and camera" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/drive/folders/15rwQY5mAljiS1W2zsv25B9lW-M5XYLcm" target="_blank" rel="noopener" aria-label="Open TurtleBot3 research data"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>TurtleBot3 Research</h3>
+            <p>Sensor-reliability research platform for autonomous navigation — my active mission.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-beacon" /></svg>09 — Contact</p>
+      <div class="heading">
+        <h2>Let's <span>build something</span></h2>
+        <p class="heading-sub">Research, collaboration, or consulting — lets build!</p>
+      </div>
+      <form
+        action="https://formsubmit.co/a4db4926d0dfc17aba93bd2ce0231c57"
+        method="POST"
+        class="form"
+      >
+        <input type="text" name="_honey" style="display: none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://shyfricas.github.io/portfolio/success.html"
+        />
+        <div class="form-row">
+          <input type="text" placeholder="Your name" name="name" required />
+          <input type="email" placeholder="Your email" name="email" required />
+        </div>
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Your message"
+          required
+        ></textarea>
+        <button type="submit" class="btn btn-primary">
+          Send message <i class="bx bx-paper-plane"></i>
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="#home" class="logo">
+          <span class="logo-mark"><img src="images/gc.png" alt="Shaliah Fricas logo" /></span>
+          <span class="logo-text">Shaliah Fricas</span>
+        </a>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/shaliahfricas" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/shyfricas" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+      <p class="footer-copyright">
+        Copyrights © <span id="year"></span> Shaliah Fricas · Ur Favorite Engineer LLC ·
+        A Normal College Student ^-^ <br /> All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <i class="bx bx-x"></i>
+      </button>
+      <img src="" alt="Enlarged image" id="lightbox-img" />
+    </div>
+
+    <!-- Inspection panel (projects + workbench items) -->
+    <div class="inspect" id="inspect" role="dialog" aria-modal="true" aria-labelledby="inspect-title" hidden>
+      <div class="inspect-backdrop" data-close></div>
+      <div class="inspect-panel" role="document">
+        <button class="inspect-close" id="inspect-close" aria-label="Close inspection panel">
+          <i class="bx bx-x"></i>
+        </button>
+        <div class="inspect-media" id="inspect-media" hidden>
+          <span class="hud-c hud-tl" aria-hidden="true"></span>
+          <span class="hud-c hud-tr" aria-hidden="true"></span>
+          <span class="hud-c hud-bl" aria-hidden="true"></span>
+          <span class="hud-c hud-br" aria-hidden="true"></span>
+          <img src="" alt="" id="inspect-img" />
+        </div>
+        <div class="inspect-head">
+          <span class="inspect-kicker" id="inspect-kicker">
+            <svg class="sym" aria-hidden="true"><use href="#sym-scan" id="inspect-sym" /></svg>
+            <span id="inspect-kind">Inspecting</span>
+          </span>
+          <h3 id="inspect-title"></h3>
+        </div>
+        <div class="inspect-body" id="inspect-body"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
