@@ -834,6 +834,19 @@
         { label: "Watch the demo", href: "https://drive.google.com/file/d/1Q_cxshvEWa62OMOeEzWxSlPKlFfLyp2v/view?usp=drive_link", icon: "bx-play-circle" },
       ],
     },
+    interviewprep: {
+      kind: "Loadout inspection",
+      title: "Favorite Engineer Interview Prep",
+      img: "images/interview-prep.png",
+      alt: "Favorite Engineer interview prep site homepage with circuit puzzle preview",
+      overview: "An interview prep site for engineers covering embedded, robotics, hardware, and behavioral questions, with a question generator, whiteboard schematics, company tracks, daily challenges, and spaced-repetition review.",
+      purpose: "Most interview prep is built for software roles. This one quizzes the circuits, code, and machines that hardware and robotics interviews actually ask about.",
+      tech: ["HTML/CSS/JS", "Firebase Hosting", "Firestore sync", "Google sign-in", "Spaced repetition"],
+      notes: "Free and not for profit. Progress saves in the browser and syncs across devices when you sign in.",
+      links: [
+        { label: "Open the site", href: "https://shyfricas.github.io/favorite-engineer/", icon: "bx-link-external" },
+      ],
+    },
     companion: {
       kind: "Loadout inspection",
       title: "Robot Companion Prototype",

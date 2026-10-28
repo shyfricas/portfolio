@@ -1775,6 +1775,20 @@ a {
   background: linear-gradient(180deg, #1b2547 0%, #131c3c 100%);
   color: var(--text);
 }
+/* new CV: gold outline + "New" chip so it reads as fresh loot */
+.btn-cv {
+  border-color: var(--gold);
+}
+.btn-new {
+  font-family: var(--font-display);
+  font-size: 0.42rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #06101f;
+  background: var(--gold);
+  padding: 0.25rem 0.35rem;
+  box-shadow: 0 0 8px rgba(255, 201, 60, 0.55);
+}
 
 /* ---- nav: RPG menu with a selector arrow ---- */
 .nav-link {
@@ -3056,6 +3070,10 @@ h1, h2, h3, p, li, a { overflow-wrap: anywhere; }
 }
 .inspect-close:hover {
   background: var(--pink);
+}
+/* let the image sit under the close button instead of being pushed below it */
+.inspect-close:has(+ .inspect-media:not([hidden])) {
+  margin-bottom: -2.6rem;
 }
 .inspect-media {
   position: relative;
