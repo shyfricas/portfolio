@@ -930,9 +930,9 @@
     },
     tbresearch: {
       kind: "Loadout inspection",
-      title: "TurtleBot3 Research",
-      img: "images/turtlebot-full.jpg",
-      alt: "Fully assembled TurtleBot3 Burger with LiDAR and camera in a pink 3D-printed mount",
+      title: "Autonomous Robotics Research",
+      img: "images/nav-costmap.webp",
+      alt: "RViz navigation view: LiDAR-built map with costmap layers and a planned path for the TurtleBot3",
       overview: "My McNair × ICARUS Lab research platform — a TurtleBot3 Burger used to study how sensor-based navigation responds to manipulated, delayed, or noisy sensor input.",
       purpose: "Quantify navigation degradation under unreliable sensing and test defenses — filtering, sensor redundancy, validation checks — that restore it.",
       tech: ["TurtleBot3 Burger", "ROS 2", "LiDAR", "Camera", "IMU", "Raspberry Pi", "OpenCR", "Python"],

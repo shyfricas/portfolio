@@ -1422,6 +1422,20 @@ a {
   color: #fff;
   border-color: var(--blue);
 }
+/* ORCID iD badge, sized like a boxicon */
+.orcid-ico {
+  width: 1em;
+  height: 1em;
+  flex: none;
+}
+.btn .orcid-ico {
+  width: 1rem;
+  height: 1rem;
+}
+.btn .orcid-ico,
+.footer-social a:hover .orcid-ico {
+  color: #a6ce39;
+}
 .footer-copyright {
   font-family: var(--font-mono);
   font-size: 0.76rem;
