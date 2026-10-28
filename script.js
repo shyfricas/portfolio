@@ -573,6 +573,7 @@
   const tbot = $("#tbot");
   if (tbot && !reduceMotion) {
     const beam = $("#tbot-beam");
+    const eyes = $("#tbot-eyes");
     if (beam) {
       window.addEventListener(
         "pointermove",
@@ -580,8 +581,12 @@
           const r = beam.getBoundingClientRect();
           const cx = r.left + r.width / 2;
           const cy = r.top + r.height / 2;
-          const deg = (Math.atan2(e.clientY - cy, e.clientX - cx) * 180) / Math.PI;
-          beam.style.setProperty("--a", deg + 90 + "deg");
+          const rad = Math.atan2(e.clientY - cy, e.clientX - cx);
+          beam.style.setProperty("--a", (rad * 180) / Math.PI + 90 + "deg");
+          if (eyes) {
+            eyes.style.setProperty("--ex", Math.cos(rad) * 2.5 + "px");
+            eyes.style.setProperty("--ey", Math.sin(rad) * 1.5 + "px");
+          }
         },
         { passive: true }
       );

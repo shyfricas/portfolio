@@ -498,142 +498,59 @@ a {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+/* one SVG drawing, so every part scales together with .tbot's width */
 .tbot-rig { position: relative; }
-/* wheels */
-.tbot-wheel {
-  position: absolute;
-  bottom: 6px;
-  width: 20px;
-  height: 46px;
-  border-radius: 9px;
-  background: linear-gradient(90deg, #05070d, #1b2236 55%, #05070d);
-  border: 1px solid rgba(150, 175, 235, 0.22);
+.tbot-svg {
+  position: relative;
   z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
-.tbot-wheel::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, var(--cyan) 30%, #263049 32%);
-  box-shadow: 0 0 6px rgba(52, 225, 212, 0.6);
+.tbot-hub {
+  fill: var(--cyan);
+  filter: drop-shadow(0 0 2px rgba(52, 225, 212, 0.9));
 }
-.tbot-wheel-l { left: -4px; }
-.tbot-wheel-r { right: -4px; }
-/* stacked plates */
-.tbot-body {
-  position: relative;
-  z-index: 2;
-  width: 92px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.tbot-eye {
+  fill: var(--cyan);
+  filter: drop-shadow(0 0 2px rgba(52, 225, 212, 0.9));
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tbotEyeBlink 4.6s ease-in-out infinite;
 }
-.tbot-deck {
-  position: relative;
-  border-radius: 7px;
-  background: linear-gradient(160deg, #26314f 0%, #161d38 60%, #0d1430 100%);
-  border: 1px solid rgba(150, 175, 235, 0.26);
-  box-shadow: inset 0 1px 2px rgba(180, 200, 245, 0.25),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.45);
+@keyframes tbotEyeBlink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  94% { transform: scaleY(0.12); }
 }
-/* waffle-plate perforations */
-.tbot-deck::before {
-  content: "";
-  position: absolute;
-  inset: 4px 8px;
-  border-radius: 4px;
-  background-image: radial-gradient(rgba(150, 175, 235, 0.35) 1px, transparent 1.4px);
-  background-size: 8px 8px;
-  opacity: 0.5;
-}
-.tbot-deck-3 { height: 20px; }
-.tbot-deck-2 { height: 22px; display: flex; align-items: center; gap: 5px; padding: 0 8px; }
-.tbot-deck-1 { height: 16px; }
-/* standoffs between decks */
-.tbot-deck-2::after,
-.tbot-deck-1::after {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 8px;
-  right: 8px;
-  height: 5px;
-  background: repeating-linear-gradient(90deg, transparent 0 34px, rgba(150,175,235,0.4) 34px 36px);
-}
-/* LiDAR puck on top */
-.tbot-lidar {
-  position: absolute;
-  top: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 18px;
-  border-radius: 6px 6px 4px 4px;
-  background: linear-gradient(180deg, #2b3655 0%, #141b33 100%);
-  border: 1px solid rgba(150, 175, 235, 0.3);
-  box-shadow: inset 0 1px 2px rgba(180, 200, 245, 0.3);
-  z-index: 3;
+/* eyes glance toward the cursor (JS sets --ex / --ey) */
+.tbot-face {
+  transform: translate(var(--ex, 0px), var(--ey, 0px));
+  transition: transform 0.15s ease-out;
 }
 .tbot-lidar-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, #d6fbff 0%, var(--cyan) 50%, #0b8f86 100%);
-  box-shadow: 0 0 8px rgba(52, 225, 212, 0.9);
-  z-index: 2;
+  fill: #ff2b2b;
+  filter: drop-shadow(0 0 3px rgba(255, 43, 43, 0.95));
 }
-/* scanning beam (rotated toward cursor by JS via --a) */
+/* scanning beam, centred on the LiDAR puck (rotated toward cursor by JS via --a) */
 .tbot-beam {
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: 150px;
-  height: 150px;
+  top: 12.5%;
+  width: 120%;
+  aspect-ratio: 1;
   transform: translate(-50%, -50%) rotate(var(--a, 0deg));
   transition: transform 0.12s ease-out;
   background: conic-gradient(
     from -20deg at 50% 50%,
-    rgba(52, 225, 212, 0) 0deg,
-    rgba(52, 225, 212, 0.55) 16deg,
-    rgba(52, 225, 212, 0) 40deg
+    rgba(255, 43, 43, 0) 0deg,
+    rgba(255, 43, 43, 0.6) 16deg,
+    rgba(255, 43, 43, 0) 40deg
   );
-  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 7px, #000 8px);
-  mask: radial-gradient(circle at 50% 50%, transparent 7px, #000 8px);
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 6%, #000 7%);
+  mask: radial-gradient(circle at 50% 50%, transparent 6%, #000 7%);
   pointer-events: none;
-  z-index: 1;
-}
-.tbot-led {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  animation: tbotBlink 1.8s ease-in-out infinite;
-}
-@keyframes tbotBlink { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
-.tbot-led-c { background: var(--cyan); box-shadow: 0 0 5px rgba(52,225,212,0.8); }
-.tbot-led-b { background: var(--blue); box-shadow: 0 0 5px rgba(45,125,255,0.8); animation-delay: 0.4s; }
-.tbot-board {
-  height: 9px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #1f8f6e, #16795c);
-  border: 1px solid rgba(120, 230, 200, 0.35);
-  flex: 1;
-}
-.tbot-board-wide {
-  position: absolute;
-  inset: 4px 10px;
-  height: auto;
-  background: linear-gradient(90deg, #234, #1a2740);
-  border-color: rgba(150, 175, 235, 0.25);
+  z-index: 0;
 }
 .tbot-tag {
   display: block;
@@ -2257,24 +2174,6 @@ h1, h2, h3, p, li, a { overflow-wrap: anywhere; }
 .lo-strip i { font-size: 0.9rem; }
 .lo-card { border-color: rgba(255, 46, 136, 0.45); }
 
-/* ---- TurtleBot: red lasers ---- */
-.tbot-lidar-core {
-  background: radial-gradient(circle, #fff2f2 0%, #ff2b2b 45%, #8d0a0a 100%);
-  box-shadow: 0 0 9px rgba(255, 43, 43, 0.95);
-}
-.tbot-beam {
-  background: conic-gradient(
-    from -20deg at 50% 50%,
-    rgba(255, 43, 43, 0) 0deg,
-    rgba(255, 43, 43, 0.6) 16deg,
-    rgba(255, 43, 43, 0) 40deg
-  );
-}
-.tbot-lidar {
-  box-shadow: inset 0 1px 2px rgba(180, 200, 245, 0.3),
-    0 0 12px rgba(255, 43, 43, 0.35);
-}
-
 @media (max-width: 1100px) {
   .menu-bar a { font-size: 0.45rem; padding: 0.5rem 0.35rem; }
 }
@@ -2390,12 +2289,9 @@ h1, h2, h3, p, li, a { overflow-wrap: anywhere; }
   }
   .tbot-tag .tag-full { display: none; }
   .tbot-tag .tag-short { display: inline; }
-  .tbot-lidar { width: 24px; height: 15px; top: -11px; }
-  .tbot-beam { width: 108px; height: 108px; }
 }
 @media (max-width: 430px) {
   .tbot { width: 64px; left: 0; bottom: -14px; }
-  .tbot-beam { width: 92px; height: 92px; }
 }
 
 /* =========================================================
