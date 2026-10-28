@@ -132,9 +132,9 @@
         <a href="#about"><i class="bx bx-user"></i><span>About</span></a>
         <a href="#path"><i class="bx bx-been-here"></i><span>Log</span></a>
         <a href="#research"><i class="bx bx-brain"></i><span>Missions</span></a>
+        <a href="#projects"><i class="bx bxs-wrench"></i><span>Loadout</span></a>
         <a href="#recognition"><i class="bx bxs-medal"></i><span>Achievements</span></a>
         <a href="#lab"><i class="bx bx-chip"></i><span>Workbench</span></a>
-        <a href="#projects"><i class="bx bxs-wrench"></i><span>Loadout</span></a>
         <a href="#contact"><i class="bx bx-envelope"></i><span>Contact</span></a>
       </nav>
       <button class="menu-btn" id="menu-btn" aria-label="Open menu">
@@ -764,13 +764,134 @@
             MassRobotics event — this card unlocks as an achievement once the
             mission is complete.
           </p>
+          <div class="mission-links">
+            <a
+              href="https://github.com/orgs/umass-boston-robotics-club/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              <i class="bx bxl-github"></i> Robotics Club GitHub
+            </a>
+          </div>
         </div>
       </article>
     </section>
 
+    <!-- Loadout -->
+    <section class="projects section" id="projects">
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-slot" /></svg>04 — Loadout</p>
+      <div class="heading">
+        <h2>My <span>loadout</span></h2>
+        <p class="heading-sub">Equipped systems — select a slot to inspect the full build</p>
+      </div>
+      <div class="lab-scroller-wrap">
+        <button class="lab-arrow lab-arrow-left" aria-label="Scroll loadout left"><i class="bx bx-chevron-left"></i></button>
+        <div class="lab-scroller rail">
+        <div class="media-card lo-card" data-project="tbresearch" tabindex="0" role="button" aria-label="Inspect Autonomous Robotics Research">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/nav-costmap.webp" alt="RViz navigation view: LiDAR-built map with costmap layers and a planned path for the TurtleBot3" />
+          <div class="card-overlay">
+            <a href="https://github.com/shyfricas/Fricas_McNair" target="_blank" rel="noopener" aria-label="Open TurtleBot3 research data"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Autonomous Robotics Research</h3>
+            <p>Sensor-reliability research platform for autonomous navigation — my active mission.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="interviewprep" tabindex="0" role="button" aria-label="Inspect Favorite Engineer Interview Prep">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/interview-prep.png" alt="Favorite Engineer interview prep site homepage with circuit puzzle preview" style="object-position: 30% center" />
+          <div class="card-overlay">
+            <a href="https://shyfricas.github.io/favorite-engineer/" target="_blank" rel="noopener" aria-label="Open Favorite Engineer Interview Prep site"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Favorite Engineer Interview Prep</h3>
+            <p>Interview prep site for embedded, robotics, hardware, and behavioral questions.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="mediseek" tabindex="0" role="button" aria-label="Inspect MediSeek">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/Fricas.jpg" alt="MediSeek AI troubleshooting agent" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/file/d/1Q_cxshvEWa62OMOeEzWxSlPKlFfLyp2v/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Open MediSeek demo"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>MediSeek</h3>
+            <p>AI-powered biomedical device troubleshooting agent for healthcare professionals.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="companion" tabindex="0" role="button" aria-label="Inspect Robot Companion Prototype">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/robot-companion-print.jpg" alt="3D-printed robot companion parts fresh off the print bed" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/drive/folders/1umzrrsLL2Iz6OcSJdVIZnkS8StVDBA4_" target="_blank" rel="noopener" aria-label="Open Robot Companion Prototype files"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Robot Companion Prototype</h3>
+            <p>Embedded robotics prototype exploring expressive human-robot interaction.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="pc" tabindex="0" role="button" aria-label="Inspect Custom PC Build">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/built pc.jpg" alt="Custom PC build" />
+          <div class="card-caption">
+            <h3>Custom PC Build</h3>
+            <p>Full hardware build and assembly from components.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="cad" tabindex="0" role="button" aria-label="Inspect 3D CAD and Manufacturing">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/CAD.png" alt="3D CAD design and printing" />
+          <div class="card-overlay">
+            <a href="https://cad.onshape.com/documents/773beb91267d6aa8bda018d6/w/b99abb94f881588028c7297e/e/31bd2a92c06c45acb058853c" target="_blank" rel="noopener" aria-label="Open CAD document"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>3D CAD &amp; Manufacturing</h3>
+            <p>Design and rapid prototyping for engineering projects.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="binary" tabindex="0" role="button" aria-label="Inspect Binary Calculator">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/tinkercad.png" alt="Binary calculator circuit" />
+          <div class="card-overlay">
+            <a href="https://drive.google.com/drive/folders/1eeOzxrOwPxCz8A4reeVSvs_Iioijv14B?usp=sharing" target="_blank" rel="noopener" aria-label="Open Binary Calculator files"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Binary Calculator</h3>
+            <p>Logic-circuit design with discrete components and microcontrollers.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="audio" tabindex="0" role="button" aria-label="Inspect Audio Processing Engine">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/audio-dashboard.jpg" alt="Audio analytics dashboard showing file properties, quality analysis, and waveform preview" />
+          <div class="card-overlay">
+            <a href="https://github.com/shyfricas/Audio-Recording-Processing-Program" target="_blank" rel="noopener" aria-label="Open Audio Processing Engine repository"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Audio Processing Engine</h3>
+            <p>C++ solution for managing and processing audio recording files.</p>
+          </div>
+        </div>
+        <div class="media-card lo-card" data-project="speech" tabindex="0" role="button" aria-label="Inspect Speech Recognition">
+          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
+          <img src="images/sr-code.png" alt="Python speech-recognition code snippet using the microphone and Google recognizer" />
+          <div class="card-overlay">
+            <a href="https://github.com/shyfricas/speech-recognition.git" target="_blank" rel="noopener" aria-label="Open Speech Recognition repository"><i class="bx bx-link-external"></i></a>
+          </div>
+          <div class="card-caption">
+            <h3>Speech Recognition</h3>
+            <p>ML model processing voice commands as assistive tech for hearing impairments.</p>
+          </div>
+        </div>
+        </div>
+        <button class="lab-arrow lab-arrow-right" aria-label="Scroll loadout right"><i class="bx bx-chevron-right"></i></button>
+      </div>
+    </section>
+
     <!-- Achievements & recognition -->
     <section class="recognition section" id="recognition">
-      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-trophy" /></svg>04 — Achievements</p>
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-trophy" /></svg>05 — Achievements</p>
       <div class="recognition-band">
         <div class="recognition-text">
           <div class="achv achv-big unlock" role="note">
@@ -859,7 +980,7 @@
 
     <!-- Workbench -->
     <section class="lab section" id="lab">
-      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-bench" /></svg>05 — Workbench</p>
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-bench" /></svg>06 — Workbench</p>
       <div class="heading">
         <h2>Equipment <span>workbench</span></h2>
         <p class="heading-sub">Select any item to inspect it · drag or use the arrows to scroll the bench →</p>
@@ -870,14 +991,14 @@
           <i class="bx bx-chevron-left"></i>
         </button>
         <div class="lab-scroller" id="lab-scroller">
-          <article class="lab-card lab-card-photo" data-gear="turtlebot" tabindex="0" role="button" aria-label="Inspect TurtleBot3 build">
+          <article class="lab-card lab-card-photo" data-gear="fab" tabindex="0" role="button" aria-label="Inspect CAD and 3D printing tooling">
             <div class="lab-photo">
-              <img src="images/lab-turtlebot.jpg" alt="TurtleBot3 build with Raspberry Pi 4 and OpenCR control board" loading="lazy" />
+              <img src="images/tool-fab.png" alt="Slicer build plate with 3D-printed parts for the astro_companion robot" loading="lazy" />
             </div>
             <div class="lab-meta">
-              <span class="lab-tag">Robotics platform</span>
-              <h3>TurtleBot3 · Raspberry Pi 4 · OpenCR</h3>
-              <p>Building my research robot — Raspberry Pi 4, OpenCR control board, and camera module for ROS navigation tests.</p>
+              <span class="lab-tag">Fabrication</span>
+              <h3>CAD &amp; 3D Printing</h3>
+              <p>Designing and printing enclosures and mounts — plus soldering and prototyping for embedded builds.</p>
             </div>
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
@@ -894,38 +1015,14 @@
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
 
-          <article class="lab-card lab-card-photo" data-gear="opalrt" tabindex="0" role="button" aria-label="Inspect OPAL-RT OP4610XG">
-            <div class="lab-photo">
-              <img src="images/lab-opalrt.jpg" alt="OPAL-RT OP4610XG real-time simulator in the ICARUS Lab rack" loading="lazy" />
+          <article class="lab-card lab-card-photo" data-gear="gazebo" tabindex="0" role="button" aria-label="Inspect Gazebo simulation">
+            <div class="lab-photo lab-photo-fit" style="--fit-bg: #f4f4f4">
+              <img src="images/tool-gazebo.png" alt="Gazebo simulator showing the buoyant_tethys world with a Tethys underwater vehicle model" loading="lazy" />
             </div>
             <div class="lab-meta">
-              <span class="lab-tag">Hardware-in-the-loop</span>
-              <h3>OPAL-RT OP4610XG</h3>
-              <p>FPGA-based real-time simulator in the ICARUS Lab — the rig behind the hardware-in-the-loop robot testing.</p>
-            </div>
-            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
-          </article>
-
-          <article class="lab-card lab-card-photo" data-gear="scope" tabindex="0" role="button" aria-label="Inspect oscilloscope bench">
-            <div class="lab-photo">
-              <img src="images/lab-scope.jpg" alt="Tektronix 2215 oscilloscope and BK Precision function generator on the circuits bench" loading="lazy" />
-            </div>
-            <div class="lab-meta">
-              <span class="lab-tag">Measurement</span>
-              <h3>Oscilloscope bench</h3>
-              <p>Tektronix 2215 scope paired with a BK Precision generator — reading waveforms for phase, frequency, and filter labs.</p>
-            </div>
-            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
-          </article>
-
-          <article class="lab-card lab-card-photo" data-gear="funcgen" tabindex="0" role="button" aria-label="Inspect Tektronix AFG3022C">
-            <div class="lab-photo">
-              <img src="images/lab-funcgen.jpg" alt="Tektronix AFG3022C dual channel arbitrary function generator" loading="lazy" />
-            </div>
-            <div class="lab-meta">
-              <span class="lab-tag">Signal source</span>
-              <h3>Tektronix AFG3022C</h3>
-              <p>Dual-channel arbitrary/function generator (25 MHz, 250 MS/s) driving circuits under test.</p>
+              <span class="lab-tag">Robot simulation</span>
+              <h3>Gazebo</h3>
+              <p>Simulating the robotics club's autonomous underwater vehicle (AUV), buoyancy physics and all, before testing on hardware.</p>
             </div>
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
@@ -954,8 +1051,34 @@
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
 
-          <article class="lab-card" data-gear="matlab" tabindex="0" role="button" aria-label="Inspect MATLAB and Python tooling">
-            <div class="lab-icon"><i class="bx bx-pulse"></i></div>
+          <article class="lab-card lab-card-photo" data-gear="kicad" tabindex="0" role="button" aria-label="Inspect KiCad PCB design">
+            <div class="lab-photo">
+              <img src="images/tool-kicad.png" alt="KiCad 3D render of a 5 V regulator PCB with a TO-220 regulator, two electrolytic capacitors, and two connectors" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">PCB design</span>
+              <h3>KiCad</h3>
+              <p>Taking circuits from schematic to routed board — like this 12 V to 5 V regulator PCB.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="ltspice" tabindex="0" role="button" aria-label="Inspect LTspice tooling">
+            <div class="lab-photo lab-photo-fit" style="--fit-bg: #f3f3f3">
+              <img src="images/tool-ltspice.png" alt="LTspice schematic of a 12 V to 5 V LT1086-5 linear regulator with 470 µF and 47 µF capacitors and a 100 Ω load" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Simulation</span>
+              <h3>LTspice</h3>
+              <p>Simulating filters, regulators, and sinusoidal response to verify circuits before I build.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="matlab" tabindex="0" role="button" aria-label="Inspect MATLAB and Python tooling">
+            <div class="lab-photo">
+              <img src="images/tool-matlab.webp" alt="MATLAB map of Atlantic Ocean surface current speeds in meters per second" loading="lazy" />
+            </div>
             <div class="lab-meta">
               <span class="lab-tag">Analysis</span>
               <h3>MATLAB &amp; Python</h3>
@@ -964,8 +1087,34 @@
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
 
-          <article class="lab-card" data-gear="sdr" tabindex="0" role="button" aria-label="Inspect SDR and GNU Radio tooling">
-            <div class="lab-icon"><i class="bx bx-broadcast"></i></div>
+          <article class="lab-card lab-card-photo" data-gear="opalrt" tabindex="0" role="button" aria-label="Inspect OPAL-RT OP4610XG">
+            <div class="lab-photo">
+              <img src="images/lab-opalrt.jpg" alt="OPAL-RT OP4610XG real-time simulator in the ICARUS Lab rack" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Hardware-in-the-loop</span>
+              <h3>OPAL-RT OP4610XG</h3>
+              <p>FPGA-based real-time simulator in the ICARUS Lab — the rig behind the hardware-in-the-loop robot testing.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="scope" tabindex="0" role="button" aria-label="Inspect oscilloscope bench">
+            <div class="lab-photo">
+              <img src="images/lab-scope.jpg" alt="Tektronix 2215 oscilloscope and BK Precision function generator on the circuits bench" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">Measurement</span>
+              <h3>Oscilloscope bench</h3>
+              <p>Tektronix 2215 scope paired with a BK Precision generator — reading waveforms for phase, frequency, and filter labs.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="sdr" tabindex="0" role="button" aria-label="Inspect SDR and GNU Radio tooling">
+            <div class="lab-photo lab-photo-fit" style="--fit-bg: #1f1f1f">
+              <img src="images/tool-sdr.png" alt="RTL-SDR spectrogram captured at 751 MHz, power in dB over time and frequency" loading="lazy" />
+            </div>
             <div class="lab-meta">
               <span class="lab-tag">RF</span>
               <h3>SDR &amp; GNU Radio</h3>
@@ -974,22 +1123,38 @@
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
 
-          <article class="lab-card" data-gear="ltspice" tabindex="0" role="button" aria-label="Inspect LTspice tooling">
-            <div class="lab-icon"><i class="bx bx-network-chart"></i></div>
+          <article class="lab-card lab-card-photo" data-gear="funcgen" tabindex="0" role="button" aria-label="Inspect Tektronix AFG3022C">
+            <div class="lab-photo">
+              <img src="images/lab-funcgen.jpg" alt="Tektronix AFG3022C dual channel arbitrary function generator" loading="lazy" />
+            </div>
             <div class="lab-meta">
-              <span class="lab-tag">Simulation</span>
-              <h3>LTspice</h3>
-              <p>Simulating RC/RL filters and sinusoidal response to verify circuits before I build.</p>
+              <span class="lab-tag">Signal source</span>
+              <h3>Tektronix AFG3022C</h3>
+              <p>Dual-channel arbitrary/function generator (25 MHz, 250 MS/s) driving circuits under test.</p>
             </div>
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
 
-          <article class="lab-card" data-gear="fab" tabindex="0" role="button" aria-label="Inspect CAD and 3D printing tooling">
-            <div class="lab-icon"><i class="bx bx-cube-alt"></i></div>
+          <article class="lab-card lab-card-photo" data-gear="turtlebot" tabindex="0" role="button" aria-label="Inspect TurtleBot3 build">
+            <div class="lab-photo">
+              <img src="images/lab-turtlebot.jpg" alt="TurtleBot3 build with Raspberry Pi 4 and OpenCR control board" loading="lazy" />
+            </div>
             <div class="lab-meta">
-              <span class="lab-tag">Fabrication</span>
-              <h3>CAD &amp; 3D Printing</h3>
-              <p>Designing and printing enclosures and mounts — plus soldering and prototyping for embedded builds.</p>
+              <span class="lab-tag">Robotics platform</span>
+              <h3>TurtleBot3 · Raspberry Pi 4 · OpenCR</h3>
+              <p>Building my research robot — Raspberry Pi 4, OpenCR control board, and camera module for ROS navigation tests.</p>
+            </div>
+            <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
+          </article>
+
+          <article class="lab-card lab-card-photo" data-gear="vivado" tabindex="0" role="button" aria-label="Inspect Vivado and VHDL">
+            <div class="lab-photo lab-photo-fit" style="--fit-bg: #000">
+              <img src="images/tool-vivado.png" alt="Vivado waveform simulation of a VHDL up/down counter driving a seven-segment display" loading="lazy" />
+            </div>
+            <div class="lab-meta">
+              <span class="lab-tag">FPGA design</span>
+              <h3>Vivado &amp; VHDL</h3>
+              <p>Writing VHDL and verifying it in Vivado's waveform simulator — like this counter driving a seven-segment display.</p>
             </div>
             <span class="inspect-hint" aria-hidden="true"><svg class="sym"><use href="#sym-scan" /></svg>Inspect</span>
           </article>
@@ -1002,12 +1167,14 @@
 
 <!-- Skills -->
     <section class="skills section" id="skills">
-      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-node" /></svg>06 — Skills</p>
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-node" /></svg>07 — Skills</p>
       <div class="heading">
         <h2>Skill <span>nodes</span></h2>
         <p class="heading-sub">The technical toolkit behind the missions</p>
       </div>
-      <div class="skills-items">
+      <div class="lab-scroller-wrap">
+        <button class="lab-arrow lab-arrow-left" aria-label="Scroll skills left"><i class="bx bx-chevron-left"></i></button>
+        <div class="lab-scroller rail">
         <div class="skills-card">
           <svg class="sym sym-skill" aria-hidden="true"><use href="#sym-node" /></svg>
           <h3>Embedded / Arduino</h3>
@@ -1043,17 +1210,21 @@
           <h3>CAD &amp; 3D Printing</h3>
           <p>Detailed CAD models and rapid prototyping for enclosures, mounts, and robotics parts.</p>
         </div>
+        </div>
+        <button class="lab-arrow lab-arrow-right" aria-label="Scroll skills right"><i class="bx bx-chevron-right"></i></button>
       </div>
     </section>
 
     <!-- Power-ups -->
     <section class="certifications section" id="certifications">
-      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-power" /></svg>07 — Power-ups</p>
+      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-power" /></svg>08 — Power-ups</p>
       <div class="heading">
         <h2>Power-ups <span>&amp; credentials</span></h2>
         <p class="heading-sub">Certified capabilities — each links to its verified credential</p>
       </div>
-      <div class="card-grid">
+      <div class="lab-scroller-wrap">
+        <button class="lab-arrow lab-arrow-left" aria-label="Scroll power-ups left"><i class="bx bx-chevron-left"></i></button>
+        <div class="lab-scroller rail">
         <div class="media-card pw-card">
           <div class="pw-strip"><svg class="sym" aria-hidden="true"><use href="#sym-power" /></svg><span>Power-up acquired</span></div>
           <img src="images/cert1.png" alt="AI Agent Foundations Certificate" />
@@ -1102,113 +1273,8 @@
             <p class="pw-skills"><span>Grants</span>AI strategy · ML fundamentals · responsible deployment</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Loadout -->
-    <section class="projects section" id="projects">
-      <p class="section-index"><svg class="sym sym-index" aria-hidden="true"><use href="#sym-slot" /></svg>08 — Loadout</p>
-      <div class="heading">
-        <h2>My <span>loadout</span></h2>
-        <p class="heading-sub">Equipped systems — select a slot to inspect the full build</p>
-      </div>
-      <div class="card-grid">
-        <div class="media-card lo-card" data-project="tbresearch" tabindex="0" role="button" aria-label="Inspect Autonomous Robotics Research">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/nav-costmap.webp" alt="RViz navigation view: LiDAR-built map with costmap layers and a planned path for the TurtleBot3" />
-          <div class="card-overlay">
-            <a href="https://github.com/shyfricas/Fricas_McNair" target="_blank" rel="noopener" aria-label="Open TurtleBot3 research data"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Autonomous Robotics Research</h3>
-            <p>Sensor-reliability research platform for autonomous navigation — my active mission.</p>
-          </div>
         </div>
-        <div class="media-card lo-card" data-project="interviewprep" tabindex="0" role="button" aria-label="Inspect Favorite Engineer Interview Prep">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/interview-prep.png" alt="Favorite Engineer interview prep site homepage with circuit puzzle preview" style="object-position: left center" />
-          <div class="card-overlay">
-            <a href="https://shyfricas.github.io/favorite-engineer/" target="_blank" rel="noopener" aria-label="Open Favorite Engineer Interview Prep site"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Favorite Engineer Interview Prep</h3>
-            <p>Interview prep site for embedded, robotics, hardware, and behavioral questions.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="mediseek" tabindex="0" role="button" aria-label="Inspect MediSeek">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/Fricas.jpg" alt="MediSeek AI troubleshooting agent" />
-          <div class="card-overlay">
-            <a href="https://drive.google.com/file/d/1Q_cxshvEWa62OMOeEzWxSlPKlFfLyp2v/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Open MediSeek demo"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>MediSeek</h3>
-            <p>AI-powered biomedical device troubleshooting agent for healthcare professionals.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="companion" tabindex="0" role="button" aria-label="Inspect Robot Companion Prototype">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/robot-companion-print.jpg" alt="3D-printed robot companion parts fresh off the print bed" />
-          <div class="card-overlay">
-            <a href="https://drive.google.com/drive/folders/1umzrrsLL2Iz6OcSJdVIZnkS8StVDBA4_" target="_blank" rel="noopener" aria-label="Open Robot Companion Prototype files"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Robot Companion Prototype</h3>
-            <p>Embedded robotics prototype exploring expressive human-robot interaction.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="pc" tabindex="0" role="button" aria-label="Inspect Custom PC Build">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/built pc.jpg" alt="Custom PC build" />
-          <div class="card-caption">
-            <h3>Custom PC Build</h3>
-            <p>Full hardware build and assembly from components.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="cad" tabindex="0" role="button" aria-label="Inspect 3D CAD and Manufacturing">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/CAD.png" alt="3D CAD design and printing" />
-          <div class="card-overlay">
-            <a href="https://cad.onshape.com/documents/773beb91267d6aa8bda018d6/w/b99abb94f881588028c7297e/e/31bd2a92c06c45acb058853c" target="_blank" rel="noopener" aria-label="Open CAD document"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>3D CAD &amp; Manufacturing</h3>
-            <p>Design and rapid prototyping for engineering projects.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="binary" tabindex="0" role="button" aria-label="Inspect Binary Calculator">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/tinkercad.png" alt="Binary calculator circuit" />
-          <div class="card-overlay">
-            <a href="https://drive.google.com/drive/folders/1eeOzxrOwPxCz8A4reeVSvs_Iioijv14B?usp=sharing" target="_blank" rel="noopener" aria-label="Open Binary Calculator files"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Binary Calculator</h3>
-            <p>Logic-circuit design with discrete components and microcontrollers.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="audio" tabindex="0" role="button" aria-label="Inspect Audio Processing Engine">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/audio-dashboard.jpg" alt="Audio analytics dashboard showing file properties, quality analysis, and waveform preview" />
-          <div class="card-overlay">
-            <a href="https://github.com/shyfricas/Audio-Recording-Processing-Program" target="_blank" rel="noopener" aria-label="Open Audio Processing Engine repository"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Audio Processing Engine</h3>
-            <p>C++ solution for managing and processing audio recording files.</p>
-          </div>
-        </div>
-        <div class="media-card lo-card" data-project="speech" tabindex="0" role="button" aria-label="Inspect Speech Recognition">
-          <div class="lo-strip"><svg class="sym" aria-hidden="true"><use href="#sym-slot" /></svg><span>Equipped</span><span class="lo-inspect">Inspect</span></div>
-          <img src="images/sr-code.png" alt="Python speech-recognition code snippet using the microphone and Google recognizer" />
-          <div class="card-overlay">
-            <a href="https://github.com/shyfricas/speech-recognition.git" target="_blank" rel="noopener" aria-label="Open Speech Recognition repository"><i class="bx bx-link-external"></i></a>
-          </div>
-          <div class="card-caption">
-            <h3>Speech Recognition</h3>
-            <p>ML model processing voice commands as assistive tech for hearing impairments.</p>
-          </div>
-        </div>
+        <button class="lab-arrow lab-arrow-right" aria-label="Scroll power-ups right"><i class="bx bx-chevron-right"></i></button>
       </div>
     </section>
 

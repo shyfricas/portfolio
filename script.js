@@ -199,11 +199,12 @@
     }
   }
 
-  /* ---------- Lab scroller: drag + arrows ---------- */
-  const scroller = $("#lab-scroller");
-  if (scroller) {
-    const left = $("#lab-left");
-    const right = $("#lab-right");
+  /* ---------- Horizontal scrollers (workbench, loadout, skills, power-ups): drag + arrows ---------- */
+  document.querySelectorAll(".lab-scroller-wrap").forEach((wrap) => {
+    const scroller = $(".lab-scroller", wrap);
+    if (!scroller) return;
+    const left = $(".lab-arrow-left", wrap);
+    const right = $(".lab-arrow-right", wrap);
     const step = () => Math.min(scroller.clientWidth * 0.8, 340);
     if (left)
       left.addEventListener("click", () =>
@@ -219,20 +220,23 @@
       startScroll = 0,
       moved = false;
     scroller.addEventListener("pointerdown", (e) => {
+      // touch already swipes natively; drag-to-scroll is for the mouse
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
       down = true;
       moved = false;
       startX = e.clientX;
       startScroll = scroller.scrollLeft;
-      scroller.setPointerCapture(e.pointerId);
     });
     scroller.addEventListener("pointermove", (e) => {
       if (!down) return;
       const dx = e.clientX - startX;
-      if (Math.abs(dx) > 4) {
+      if (!moved && Math.abs(dx) > 4) {
+        // capture only once it's a real drag, so plain clicks still reach cards and links
         moved = true;
         scroller.classList.add("dragging");
+        scroller.setPointerCapture(e.pointerId);
       }
-      scroller.scrollLeft = startScroll - dx;
+      if (moved) scroller.scrollLeft = startScroll - dx;
     });
     const end = () => {
       down = false;
@@ -251,7 +255,7 @@
       },
       true
     );
-  }
+  });
 
   /* ---------- Lightbox ---------- */
   const poster = $("#poster");
@@ -797,6 +801,8 @@
     matlab: {
       kind: "Toolchain inspection",
       title: "MATLAB & Python",
+      img: "images/tool-matlab.webp",
+      alt: "MATLAB map of Atlantic Ocean surface current speeds in meters per second",
       what: "My analysis pair — MATLAB for signal work and lab data, Python for ML pipelines and automation.",
       used: "UCaN Lab mission (wireless-signal features and classification models) and ongoing robotics data analysis.",
       gained: "Turning raw captures into evidence: feature extraction, model training, and clear, reusable plots.",
@@ -804,6 +810,9 @@
     sdr: {
       kind: "Toolchain inspection",
       title: "SDR & GNU Radio",
+      img: "images/tool-sdr.png",
+      fit: true,
+      alt: "RTL-SDR spectrogram captured at 751 MHz, power in dB over time and frequency",
       what: "Software-defined radio hardware and flowgraph tooling for capturing and processing RF.",
       used: "UCaN Lab RF localization testbed and the AFRL SDR University Challenge — capturing I/Q data for the ML pipeline.",
       gained: "Practical RF: sample rates, I/Q data, fingerprinting, and building flowgraphs that produce usable datasets.",
@@ -811,13 +820,49 @@
     ltspice: {
       kind: "Toolchain inspection",
       title: "LTspice",
+      img: "images/tool-ltspice.png",
+      alt: "LTspice schematic of a 12 V to 5 V LT1086-5 linear regulator with 470 µF and 47 µF capacitors and a 100 Ω load",
       what: "A circuit simulator for validating designs before they touch the bench.",
-      used: "Circuit Analysis coursework — RC/RL filters and sinusoidal-response verification.",
+      used: "Circuit Analysis coursework — RC/RL filters and sinusoidal-response verification — plus simulating the LT1086-5 regulator before laying out its PCB.",
       gained: "Predict-then-measure habits: simulate expected behavior, then confirm it with the scope.",
+    },
+    gazebo: {
+      kind: "Toolchain inspection",
+      title: "Gazebo",
+      img: "images/tool-gazebo.png",
+      fit: true,
+      alt: "Gazebo simulator showing the buoyant_tethys world with a Tethys underwater vehicle model",
+      what: "An open-source 3D robotics simulator with physics engines, sensor models, and ROS 2 integration.",
+      used: "UMass Boston Robotics Club — simulating an autonomous underwater vehicle (AUV) in the buoyant_tethys world, with buoyancy physics, before hardware testing.",
+      gained: "Simulation-first testing: world and SDF setup, physics plugins, and checking robot behavior before it touches hardware.",
+      links: [
+        { label: "Robotics Club GitHub", href: "https://github.com/orgs/umass-boston-robotics-club/", icon: "bxl-github" },
+      ],
+    },
+    vivado: {
+      kind: "Toolchain inspection",
+      title: "Vivado & VHDL",
+      img: "images/tool-vivado.png",
+      fit: true,
+      alt: "Vivado waveform simulation of a VHDL up/down counter driving a seven-segment display",
+      what: "Xilinx's FPGA design suite for writing, simulating, and synthesizing HDL designs.",
+      used: "Digital Systems labs — simulating VHDL designs like an up/down counter with seven-segment output before programming the Zybo Z7.",
+      gained: "Testbench-driven debugging: reading waveforms, checking clocked behavior, and fixing logic before synthesis.",
+    },
+    kicad: {
+      kind: "Toolchain inspection",
+      title: "KiCad",
+      img: "images/tool-kicad.png",
+      alt: "KiCad 3D render of a 5 V regulator PCB with a TO-220 regulator, two electrolytic capacitors, and two connectors",
+      what: "Open-source EDA suite for schematic capture, PCB layout, and 3D board previews.",
+      used: "Designing a 12 V to 5 V linear-regulator board around an LT1086-5 — input and output capacitors, screw-terminal connectors, and routed traces.",
+      gained: "Schematic-to-layout flow: footprints, trace routing, and checking a board in 3D before it's fabricated.",
     },
     fab: {
       kind: "Toolchain inspection",
       title: "CAD, 3D printing & prototyping",
+      img: "images/tool-fab.png",
+      alt: "Slicer build plate with 3D-printed parts for the astro_companion robot",
       what: "Onshape CAD modeling, 3D printing, and soldering / prototyping equipment for physical builds.",
       used: "Enclosures and mounts for embedded and robotics projects, plus client work through Your Favorite Engineer LLC.",
       gained: "Design-for-manufacture instincts — tolerances, print orientation, and iterating hardware quickly.",
@@ -974,6 +1019,7 @@
       if (data.img) {
         inspectImg.src = data.img;
         inspectImg.alt = data.alt || data.title;
+        inspectImg.style.objectFit = data.fit ? "contain" : "";
         inspectMedia.hidden = false;
       } else {
         inspectImg.src = "";
@@ -986,6 +1032,7 @@
         html += row("What it is", data.what);
         html += row("Used in", data.used);
         html += row("Skill gained", data.gained);
+        html += linkBtns(data.links);
       } else {
         // project readout
         html += `<p>${escHTML(data.overview)}</p>`;

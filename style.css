@@ -1020,6 +1020,8 @@ a {
    ========================================================= */
 .lab-scroller-wrap {
   position: relative;
+  /* room for the arrows so they never cover card text */
+  padding: 0 2rem;
 }
 .lab-scroller {
   display: flex;
@@ -1066,6 +1068,13 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* plots and schematics: show the whole image instead of cropping axes */
+.lab-photo-fit {
+  background: var(--fit-bg, var(--ink));
+}
+.lab-photo-fit img {
+  object-fit: contain;
 }
 .lab-icon {
   aspect-ratio: 4 / 3;
@@ -1119,11 +1128,17 @@ a {
   border-color: var(--blue);
   background: var(--panel-2);
 }
+/* loadout, skills and power-up cards ride the same scroller as the workbench */
+.rail > .media-card,
+.rail > .skills-card {
+  flex: 0 0 clamp(240px, 74vw, 280px);
+  scroll-snap-align: start;
+}
 .lab-arrow-left {
-  left: -0.6rem;
+  left: -1.2rem;
 }
 .lab-arrow-right {
-  right: -0.6rem;
+  right: -1.2rem;
 }
 
 /* =========================================================
@@ -2716,6 +2731,9 @@ h1, h2, h3, p, li, a { overflow-wrap: anywhere; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+.accepted-note + .mission-links {
+  margin-top: 1.2rem;
 }
 .mission-note {
   margin-top: 1rem;
